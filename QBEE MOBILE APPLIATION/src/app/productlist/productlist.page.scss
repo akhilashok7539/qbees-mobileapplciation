@@ -1,0 +1,142 @@
+ion-menu-button {
+    color: var(--ion-color-primary);
+}
+
+ion-toolbar {
+    // --background: #431d12;
+    --background: #431d12;
+}
+
+ion-menu-button {
+    color: white !important;
+}
+
+.ion-color-primary {
+    --ion-color-base: #431d12 !important;
+}
+
+ion-title {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cart {
+    color: white;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.centered {
+    position: absolute;
+    top: 33% !important;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: small;
+    top: 24%;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    text-align: center;
+    top: 24%;
+    font-size: small;
+    left: 16px;
+}
+
+.ion-text-end {
+    margin-right: 2px;
+    text-align: end !important;
+}
+
+.ion-text-start {
+    margin-left: 2px;
+    text-align: start !important;
+}
+
+.bottom-center {
+    position: absolute;
+    bottom: 8px;
+    top: 24%;
+    left: 32%;
+}
+
+.viewbtn {
+    border-top-right-radius: 14px;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    background: #8b8c8b;
+}
+
+.vertical {
+    border-left: 2px solid white;
+    height: 46px;
+    position: absolute;
+    left: 28%;
+    top: 24%;
+}
+
+.vertical2 {
+    border-left: 2px solid white;
+    height: 46px;
+    position: absolute;
+    left: 68%;
+    top: 24%;
+}
+
+.rating {
+    color: #ffffff;
+    margin-top: -11px;
+    font-size: 20px;
+}
+
+.cart {
+    color: white;
+}
+
+.time {
+    color: black;
+    text-align: left;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.addbtn {
+    // position: absolute;
+    // margin: 13px 56px;
+    border-top-left-radius: 14px;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    outline: none !important;
+    border: none !important;
+    background: #431d12;
+}
+
+.timeslots {
+    color: black;
+    text-align: left;
+}

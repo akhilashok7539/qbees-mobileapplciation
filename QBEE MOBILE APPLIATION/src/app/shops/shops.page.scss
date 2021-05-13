@@ -1,0 +1,96 @@
+ion-menu-button {
+    color: var(--ion-color-primary);
+}
+
+ion-toolbar {
+    // --background: #431d12;
+    --background: #431d12;
+}
+
+ion-menu-button {
+    color: white !important;
+}
+
+ion-title {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+ion-row {
+    border: 1px solid #dad8d8 !important;
+    // margin: 5px !important;
+}
+
+.cart {
+    color: white;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.productimage {
+    width: 111px;
+}
+
+.card {
+    margin: 6px;
+    // height: 122px;
+    padding: 7px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    margin-top: -20px;
+    width: 221px;
+    padding: 0 10px;
+}
+
+.rate:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
+}
+
+.rate:not(:checked)>label {
+    float: right;
+    width: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+.rate:not(:checked)>label:before {
+    content: '★ ';
+}
+
+.rate>input:checked~label {
+    color: #ffc700;
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+    color: #deb217;
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+    color: #c59b08;
+}

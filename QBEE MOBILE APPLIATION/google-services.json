@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "814122153538",
+    "project_id": "qbees-1a249",
+    "storage_bucket": "qbees-1a249.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814122153538:android:34963945c823be00381fdb",
+        "android_client_info": {
+          "package_name": "com.satmayadigital.qbees"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814122153538-genh22criphcf8r7bmv54h6pe5oqs8ma.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi03DGvqmtz3WbZolo6STXA4VgDEjqKpA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814122153538-genh22criphcf8r7bmv54h6pe5oqs8ma.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

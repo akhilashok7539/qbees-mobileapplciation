@@ -1,0 +1,189 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+            <!-- <button routerLink="/navigaiondrawer">s</button> -->
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button routerLink="/cart">
+                <ion-icon class="cart" name="cart-sharp"></ion-icon>
+                <ion-badge color="warning" style="margin-top: -12px;
+                font-size: 10px;">{{cartlength}}</ion-badge>
+                <!-- <div class="cart">
+                    <p class="count">1</p>
+                </div> -->
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title>QBEE</ion-title>
+
+    </ion-toolbar>
+    <ion-toolbar class="searchtoolbar">
+        <input routerLink="/search-product" type="text" class="form-control" placeholder="Search,essentials,groceries">
+        <span class="close" style="margin-top: -29px;
+   margin-right: 11px;">
+            <ion-icon name="search-sharp"></ion-icon>
+        </span>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+
+                <ion-slides pager="true" [options]="slideOptsOne" #slideWithNav (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+                    <ion-slide *ngFor="let s of sliderOne.slidesItems" (click)="banner(s)">
+                        <img src="https://dashboard.qbees.in/offers/get/image/{{s.bnr_img}}">
+
+                    </ion-slide>
+                </ion-slides>
+
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+
+
+
+
+    <!-- TOP DEALS SECTION -->
+
+    <!-- <h4>Top Deals</h4>
+  <p style="float: right;
+    margin-top: -41px;margin-right: 20px;color: red;">View All</p> -->
+    <ion-row>
+        <ion-col>
+            <div class="ion-text-start">
+                <h4 style="margin-left: 10px;">Top Deals</h4>
+
+            </div>
+        </ion-col>
+        <ion-col>
+            <div class="ion-text-end">
+                <p style="margin-right: 10px; color: red;" (click)="viewall()">View All</p>
+            </div>
+        </ion-col>
+    </ion-row>
+
+    <ion-grid *ngIf="msg == 'data found'" style="margin-top: -25px;">
+        <ion-row>
+
+            <ion-col size="12 ">
+
+                <ion-slides pager="false" [options]="slideOptsThree " #slideWithNav3 (ionSlideDidChange)="SlideDidChange(sliderThree,slideWithNav3) ">
+
+                    <ion-slide *ngFor="let s of sliderThree.slidesItems ">
+
+
+                        <div class="card ">
+                            <!-- <img *ngIf="s.dish_image != ''" src="{{s.dish_image}}" alt=" " style="height: 126px; "> -->
+                            <img src="{{s.menu_img}}" alt=" " style="height: 126px; ">
+
+                            <div padding>
+                                <p style="font-size: 9px;
+                                margin-bottom: 0px;
+                                margin-top: 5px;">{{s.shop_name}}</p>
+                                <h4 style="    font-size: 15px;
+                                margin-left: 10px;
+                                margin-top: 2px;
+                                text-align: left;
+                                padding-bottom: 0px;">
+                                    {{s.item_name | slice:0:15}}</h4>
+                                <p style="font-size: 14px;font-weight: bold;color: rgb(10, 150, 10); margin-left: 10px; margin-bottom: -6px; text-align: left;margin-left: 10px; ">
+                                    Your Save {{s.actual_price - s.offr_price}}</p>
+                                <h6 style=" padding-bottom: 0px;font-size: 13px;    margin-top: 10px; "> ₹ {{s.offr_price}}.00/- &nbsp;
+                                    <S style="color: red; "> ₹ {{s.actual_price}}.00/-</S>
+                                </h6>
+                                <button class="btn btn-primary " (click)="addtocart(s)" *ngIf="s.deal_cart == 'No'">Add to Cart</button>
+                                <!-- <button *ngIf="s.deal_in_cart == 'Y'">-</button>
+                                <p>1</p>
+                                <button *ngIf="s.deal_in_cart == 'Y'">+</button> -->
+                                <ion-row>
+
+                                    <ion-col size="12" *ngIf="s.deal_cart == 'Yes'">
+                                        <button (click)="minus(s)" class="buttonplusminus">
+                                            <ion-icon name="remove-sharp"></ion-icon>
+
+                                        </button>
+
+                                        <a class="quantity" style="    margin: 5px;color: black;">{{s.cart_qnty}}</a>
+                                        <button (click)="add(s)" class="buttonplusminus">
+                                            <ion-icon name="add-sharp"></ion-icon>
+                                        </button>
+                                    </ion-col>
+                                </ion-row>
+
+                            </div>
+
+                        </div>
+
+                    </ion-slide>
+                </ion-slides>
+
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+
+
+    <!-- TOP DEELS ENDS HERE -->
+
+
+    <!-- PRODUCT CATEGORIES -->
+
+    <h4 style="margin-left: 10px; ">Shop From Categories</h4>
+    <!-- <button routerLink="/mapagmdrag">click</button> -->
+    <!-- <button routerLink="/map">map</button> -->
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="3 " *ngFor="let cat of category ">
+                <img [src]="cat.cat_img " alt="{{cat.category_name}}" style="height: 115px;
+                margin: 0 auto;    color: #431d12;
+    font: 15px Impact;text-align: center;
+                display: block;
+                width: 100%;" (click)="shops(cat) ">
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <!-- PRODUCT CATEGORIES ENDS HERE -->
+
+
+
+    <!-- height: 139px; margin: 0 auto; display: block;  -->
+    <!-- <ion-col size="1 ">
+      <span class="slider-nav arrow-next " (click)="slideNext(sliderThree,slideWithNav3) ">
+        <div class="next-icon-custom custon-nav " [class.disabled]="sliderThree.isEndSlide "></div>
+      </span>
+    </ion-col> -->
+    <!-- </ion-card> -->
+
+    <!-- <div class="scrolling-wrapper ">
+      <div class="card " *ngFor="let s of sliderThree.slidesItems ">
+
+        <ion-card (click) = "markMap(s) ">
+          <ion-card-header>
+            <ion-card-subtitle> </ion-card-subtitle>
+            <ion-card-title></ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content  style="text-align: center ;color: black ">
+              <svg style="width:24px;height:24px " viewBox="0 0 24 24 ">
+                  <path fill="#000000 " d="M15,14C12.33,14 7,15.33 7,18V20H23V18C23,15.33 17.67,14 15,14M6,10V7H4V10H1V12H4V15H6V12H9V10M15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12Z " />
+              </svg> <br/>
+            <span >{{s.id}}</span>
+          </ion-card-content>
+        </ion-card>
+
+      </div>
+      
+      
+    </div> -->
+</ion-content>

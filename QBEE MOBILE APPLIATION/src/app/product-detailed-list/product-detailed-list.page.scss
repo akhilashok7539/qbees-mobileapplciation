@@ -1,0 +1,152 @@
+ion-menu-button {
+    color: var(--ion-color-primary);
+}
+
+ion-toolbar {
+    // --background: #431d12;
+    --background: #431d12;
+}
+
+ion-menu-button {
+    color: white !important;
+}
+
+ion-title {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card {
+    padding: 10px;
+}
+
+.cart {
+    color: white;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.centered {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+.bottom-center {
+    position: absolute;
+    bottom: 8px;
+    left: 32%;
+}
+
+.vertical {
+    border-left: 2px solid white;
+    height: 46px;
+    position: absolute;
+    left: 28%;
+    top: 70%;
+}
+
+.vertical2 {
+    border-left: 2px solid white;
+    height: 46px;
+    position: absolute;
+    left: 68%;
+    top: 70%;
+}
+
+.rating {
+    color: #ffffff;
+    margin-top: -11px;
+    font-size: 20px;
+    margin-left: 2px;
+}
+
+.cart {
+    color: white;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.addbtn {
+    position: absolute;
+    margin: 13px 56px;
+    border-top-left-radius: 14px;
+    color: white;
+    padding: 5px;
+    background: #431d12;
+}
+
+.section {
+    margin: 10px;
+}
+
+p {
+    color: #696666;
+}
+
+h6 {
+    font-weight: 600;
+}
+
+.discount {
+    margin-top: 10px;
+    font-weight: 700;
+    color: green;
+}
+
+.productPrice {
+    font-weight: bold;
+    color: black;
+}
+
+a {
+    font-size: 29px;
+    margin-left: 10px;
+    margin-right: 11px;
+    color: black;
+}
+
+.plus {
+    font-size: 25px;
+}
+
+.minus {
+    font-size: 25px;
+}
+
+.toolbar {
+    --background: white;
+}
+
+.btn-primary {
+    background: #431d12;
+    border: #431d12;
+    outline: none !important;
+}

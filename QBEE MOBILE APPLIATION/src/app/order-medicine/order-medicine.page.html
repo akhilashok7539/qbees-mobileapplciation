@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+        </ion-buttons>
+        <ion-buttons slot="end">
+
+        </ion-buttons>
+
+        <ion-title>QBEE</ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+    <h5>Upload Medical prescription</h5>
+    <hr style="    background: #431d12;
+    width: 49%;">
+    <ion-item>
+        <ion-label>Choose Pharmacy</ion-label>
+        <ion-select value="brown" okText="Okay" cancelText="Dismiss" [(ngModel)]="pharmacy">
+            <ion-select-option *ngFor="let s of shops" value="{{s._id}}">{{s.pharmacy_name}}</ion-select-option>
+
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <!-- <ion-label>Choose Pharmacy</ion-label> -->
+        <div class="image-upload-wrap" style="    width: 100%;">
+            <input class="file-upload-input" type='file' accept="image/*" (change)="image($event)" />
+            <div class=" drag-text ">
+                <h3>{{textname}}</h3>
+            </div>
+        </div>
+
+
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Description</ion-label>
+        <ion-input [(ngModel)]="description"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Notes</ion-label>
+        <ion-input [(ngModel)]="nots"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Contact Number</ion-label>
+        <ion-input [(ngModel)]="cnumber" type="number"></ion-input>
+    </ion-item>
+    <ion-button color="warning" expand="full" (click)="submit()">Submit</ion-button>
+</ion-content>

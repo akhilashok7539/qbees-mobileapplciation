@@ -1,0 +1,63 @@
+ion-menu-button {
+    color: var(--ion-color-primary);
+}
+
+ion-toolbar {
+    --background: #431d12;
+}
+
+ion-menu-button {
+    color: white !important;
+}
+
+ion-title {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+ion-fab-button {
+    margin-bottom: 40px !important;
+    --background: #431d12;
+}
+
+.badge {
+    float: right;
+}
+
+.card {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.cart {
+    color: white;
+}
+
+.back {
+    color: white;
+    font-size: 21px;
+}
+
+.searchtoolbar {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+.card {
+    padding: 10px;
+    ;
+}
+
+.topdeals {
+    font-weight: bold;
+    font-family: poppins;
+    margin-left: 14px;
+    font-size: 19px;
+}
+
+.ion-color-success {
+    --ion-color-base: #06672d !important;
+}

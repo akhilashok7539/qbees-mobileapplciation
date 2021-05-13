@@ -1,0 +1,212 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="chevron-back-sharp" class="back" (click)="back()"></ion-icon>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <!-- <ion-button>
+            <ion-icon class="cart" name="cart-sharp"></ion-icon>
+        </ion-button> -->
+        </ion-buttons>
+
+        <ion-title>QBEE</ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+<!-- <ion-content>
+
+    <div class="card">
+
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start">
+
+
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-start">
+                    <h6 style="    text-align: center;
+            font-weight: bold;
+            color: #431d12;">{{preorders.porder_id}}</h6>
+
+                </div>
+            </ion-col>
+
+        </ion-row>
+
+
+        <hr style="    border-top: 1px solid #bfb9b9;">
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start">
+                    <p>Product </p>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-center">
+                    <p>Price,quantity</p>
+                </div>
+
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-end">
+                    <p>Status</p>
+                </div>
+
+            </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let order of products">
+            <ion-col>
+                <div class="ion-text-start">
+                    <p>{{order.name}}</p>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-center">
+                    <p>{{order.price}},{{order.qnty}}</p>
+
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-end">
+                    <p style="color: green;">{{preorders.order_status}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start">
+                    <p>Delivery Date </p>
+
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-end">
+                    <p style="font-weight: bold; color: #431d12;">{{orderlists.delivery_date}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start">
+                    <p>Delivery Time </p>
+
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-end">
+                    <p style="font-weight: bold; color: #431d12;">{{orderlists.delivery_time}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start">
+                    <p>Payment Mode </p>
+
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-end">
+                    <p style="font-weight: bold; color: #431d12;">{{orderlists.payment_type}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start">
+                    <p>Order Status </p>
+
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-end">
+                    <p style="font-weight: bold; color: #431d12;">{{orderlists.order_status}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <hr style="background: #e8dede;">
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start">
+                    <p>Total Amount</p>
+
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-end">
+                    <p style="font-weight: bold; color: red;">Rs.{{orderlists.amount}}/-</p>
+                </div>
+            </ion-col>
+        </ion-row>
+    </div>
+
+
+
+
+</ion-content> -->
+
+<ion-content>
+    <h6 style="    text-align: center;
+  font-weight: bold;font-size: 28px;
+  color: #431d12;">{{preorders.porder_id}}</h6>
+    <hr>
+    <div class="container">
+        <h6 style="    text-align: Left;
+      font-weight: bold;
+      color: #431d12;">Delivery Date : {{preorders.delivery_date}}</h6>
+        <h6 style="    text-align: Left;
+     font-weight: bold;
+     color: #431d12;">Delivery Time : {{preorders.delivery_time}}</h6>
+        <h6 style="    text-align: Left;
+     font-weight: bold;
+     color: #431d12;">Payment Mode : {{preorders.payment_type}}</h6>
+        <h6 style="    text-align: Left;
+     font-weight: bold;
+     color: #431d12;">Order Status : {{preorders.order_status}}</h6>
+        <h6 style="    text-align: Left;
+  font-weight: bold;
+  color: #431d12;">Total Amount : {{preorders.amount}}</h6>
+
+    </div>
+
+    <ion-card>
+        <ion-row style="border-bottom: 3px solid #431d12;
+        margin-left: 11px;
+        margin-right: 11px;">
+            <ion-col>
+                <div class="ion-text-start">
+                    <p>Product </p>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-center">
+                    <p>Price,quantity</p>
+                </div>
+
+            </ion-col>
+
+        </ion-row>
+        <ion-row *ngFor="let order of products" style="
+        margin-top: 10px;
+        margin-left: 11px;
+        margin-right: 11px;">
+            <ion-col>
+                <div class="ion-text-start">
+                    <p>{{order.name}}</p>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-center">
+                    <p>{{order.price}},{{order.qnty}}</p>
+
+                </div>
+            </ion-col>
+
+        </ion-row>
+    </ion-card>
+
+</ion-content>

@@ -1,0 +1,91 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="chevron-back-sharp" class="back" (click)="back()"></ion-icon>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button routerLink="/cart">
+                <ion-icon class="cart" name="cart-sharp"></ion-icon>
+                <ion-badge color="warning" style="margin-top: -12px;
+            font-size: 10px;">{{cartlength}}</ion-badge>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title>QBEE</ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+
+        <!-- <ion-list-header>
+            <ion-label>
+                Delivery Address or
+            </ion-label>
+        </ion-list-header>
+        <ion-item>
+
+            <ion-input placeholder="Name"></ion-input>
+        </ion-item>
+        <ion-item>
+
+            <ion-input placeholder="Phone"></ion-input>
+        </ion-item>
+        <ion-item>
+
+            <ion-input placeholder="Address"></ion-input>
+        </ion-item> -->
+
+        <ion-list-header>
+            <ion-label>
+                Select Delivery Address
+            </ion-label>
+        </ion-list-header>
+
+        <ion-item>
+            <ion-label>Choose</ion-label>
+            <ion-select placeholder="Select One" [(ngModel)]="address">
+
+                <ion-select-option *ngFor="let homeAddress of homeAddress" value="{{homeAddress}}">
+
+                    {{homeAddress.address}}
+
+                </ion-select-option>
+
+
+            </ion-select>
+        </ion-item>
+        <ion-list-header>
+            <ion-label>
+                Payment Method
+            </ion-label>
+
+        </ion-list-header>
+        <ion-item>
+            <ion-label>Payment Type</ion-label>
+            <ion-select placeholder="Select One">
+                <ion-select-option value="COD">COD</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-list-header>
+            <ion-label>
+                Payment Amount
+            </ion-label>
+        </ion-list-header>
+
+        <ion-item>
+            <ion-label>
+                Total
+            </ion-label>
+            <p style="margin-bottom: 0rem;">₹ {{totalamout}}</p>
+        </ion-item>
+    </ion-list>
+    <ion-button expand="block" color="dark" (click)="confirm()">Confirm Order</ion-button>
+
+
+</ion-content>

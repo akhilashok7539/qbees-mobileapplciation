@@ -1,0 +1,91 @@
+<ion-content padding class="background">
+    <!-- <div class="contianer" style="margin-top: 230px;">
+
+        <ion-grid>
+            <ion-row class="otp-box">
+                <ion-col>
+                    <div>
+                        <ion-input name="a" [(ngModel)]="otp1" #a (keyup)="moveFocus($event,b,'')" type="tel" placeholder="" maxlength="1">
+                        </ion-input>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-input name="b" [(ngModel)]="otp2" #b (keyup)="moveFocus($event,c,a)" type="tel" placeholder="" maxlength="1">
+                        </ion-input>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-input name="c" [(ngModel)]="otp3" #c (keyup)="moveFocus($event,d,b)" type="tel" placeholder="" maxlength="1">
+                        </ion-input>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-input name="d" [(ngModel)]="otp4" #d (keyup)="moveFocus($event,'',c)" type="tel" placeholder="" maxlength="1">
+                        </ion-input>
+                    </div>
+                </ion-col>
+
+
+            </ion-row>
+        </ion-grid>
+        <button class="btn btn-danger" (click)="login()">Submit</button>
+        <p class="didntreceive">Didn't Receive OTP ?</p>
+        <p class="resend" (click)="resend()"> Resend</p>
+    </div> -->
+    <ion-row class="rowclass">
+        <ion-col>
+            <img src="./assets/images/qbee 3D logo png.png" alt="">
+            <!-- <h1 class="heading">QBEES</h1> -->
+            <p>Online Delivery and Services</p>
+        </ion-col>
+    </ion-row>
+
+    <div class="center">
+        <div heading-column-ln>
+            <h1 big-heading> OTP!</h1>
+
+
+        </div>
+        <ion-label>
+            Please verify your OTP
+        </ion-label>
+        <div linespace></div>
+        <ion-grid>
+            <!-- <ion-row class="otp-box">
+                <ion-col>
+                    <div>
+                        <ion-input name="a" [(ngModel)]="otp1" #a (keyup)="moveFocus($event,b,'')" type="tel" placeholder="" maxlength="1">
+                        </ion-input>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-input name="b" [(ngModel)]="otp2" #b (keyup)="moveFocus($event,c,a)" type="tel" placeholder="" maxlength="1">
+                        </ion-input>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-input name="c" [(ngModel)]="otp3" #c (keyup)="moveFocus($event,d,b)" type="tel" placeholder="" maxlength="1">
+                        </ion-input>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-input name="d" [(ngModel)]="otp4" #d (keyup)="moveFocus($event,'',c)" type="tel" placeholder="" maxlength="1">
+                        </ion-input>
+                    </div>
+                </ion-col>
+
+
+            </ion-row> -->
+            <input type="text" class="form-control" [(ngModel)]="otp4">
+        </ion-grid>
+        <button class="btn btn-danger" (click)="login()">Submit</button>
+        <p class="didntreceive">Didn't Receive OTP ?</p>
+        <p class="resend" (click)="resend()"> Resend</p>
+    </div>
+</ion-content>

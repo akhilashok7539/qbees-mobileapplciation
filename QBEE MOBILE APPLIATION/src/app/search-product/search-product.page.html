@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="chevron-back-sharp" class="back" (click)="back()"></ion-icon>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button>
+                <!-- <ion-icon class="cart" name="cart-sharp"></ion-icon> -->
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title>QBEE</ion-title>
+
+    </ion-toolbar>
+
+    <ion-toolbar class="searchtoolbar">
+        <input [(ngModel)]="searchtext" (keyup)="searchkeyword(searchtext)" type="text" class="form-control" placeholder="Search,essentials,groceries">
+        <span class="close" style="margin-top: -29px;margin-right: 11px;">
+            <ion-icon name="search-sharp" (click)="search()"></ion-icon>
+        </span>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="message == 'data found'">
+
+    <div class="card" style="margin: 6px;  padding: 7px;" *ngFor="let products of products">
+        <div class="row">
+            <div class="col-sm-12" style="    margin-bottom: -21px;">
+                <img src="{{products.item_img}}" style="    width: 100px;margin-right: 10px; height: 77px;float: left;">
+                <p style=" color: black; text-align: left; ">{{products.item_name}}</p>
+                <p style=" color: black; text-align: left; font-size: 11px;
+                margin-top: -16px;">{{products.shop_name}}</p>
+                <p style="    color: #ff5e00;text-align: left;  margin-top: -17px;">★★★★★</p>
+                <p style="    color: #05740a;text-align: left;  margin-top: -17px;">{{products.itm_srate}} INR
+                </p>
+
+            </div>
+            <ion-col>
+                <div class="ion-text-start">
+                    <button (click)="viewProduct(products)" class="viewbtn">View <ion-icon name="eye-outline">
+                        </ion-icon> </button>
+
+                </div>
+            </ion-col>
+            <ion-col>
+
+                <div class="ion-text-end">
+                    <button (click)="add(products)" class="addbtn">Add <ion-icon name="add-sharp"></ion-icon> </button>
+
+
+                </div>
+            </ion-col>
+
+        </div>
+
+    </div>
+</ion-content>
+<ion-content *ngIf="message == 'No data found'">
+    <div class="contianer" style="   margin-top: 22%;">
+        <img src="./assets/images/nofood.png" alt="" style="    margin: 0 auto;
+        display: block;">
+        <p style="text-align: center;font-weight: bold;margin-top: 10px;">No Products Found</p>
+    </div>
+</ion-content>

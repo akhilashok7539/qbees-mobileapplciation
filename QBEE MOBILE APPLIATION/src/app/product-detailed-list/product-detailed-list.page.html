@@ -1,0 +1,69 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+
+            <ion-button routerLink="/cart">
+                <ion-icon class="cart" name="cart-sharp"></ion-icon>
+                <ion-badge color="warning" style="margin-top: -12px;
+                font-size: 10px;">{{cartlength}}</ion-badge>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title>QBEE</ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+<ion-content>
+    <div class="section">
+        <h6>{{dish_name}}</h6>
+        <p>{{dish_type}}</p>
+
+        <!-- <img src="{{dish_image}}" alt=""> -->
+        <ion-slides [options]="sliderOpt" zoom>
+            <ion-slide>
+                <div class="swiper-zoom-container">
+                    <img src="{{dish_image}}" style="margin: 0 auto;height: 242px;
+         display: block;" (click)="presentModal()" />
+                </div>
+            </ion-slide>
+        </ion-slides>
+
+
+        <p class="discount"></p>
+        <!-- Your Save ₹ 33.00 -->
+        <p class="productPrice"> ₹ {{dish_sellingprice}} &nbsp; &nbsp;<em style="    color: grey; font-weight: normal;font-style: normal;">(include all taxes) </em></p>
+        <div class="card">
+            <h6>Description</h6>
+            <p>{{dish_description}}</p>
+
+
+        </div>
+        <h6>Choose Quantity</h6>
+        <div class="row">
+
+            <br>
+            <button (click)="minus()" class="btn btn-dark" style="margin-left: auto; width: 50px; height: 41px;"><ion-icon class="plus" name="remove-circle-sharp"></ion-icon></button>
+            <a>{{quantity}}</a>
+            <button (click)="plus()" class="btn btn-dark" style="margin-right: auto;
+      width: 50px;
+      height: 41px;"><ion-icon class="minus" name="add-circle-sharp"></ion-icon></button>
+
+        </div>
+
+    </div>
+
+</ion-content>
+<ion-footer>
+    <ion-toolbar class="toolbar">
+        <ion-buttons slot="end">
+
+
+            <button class="btn btn-primary" (click)="addtocart()">Add to cart</button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>

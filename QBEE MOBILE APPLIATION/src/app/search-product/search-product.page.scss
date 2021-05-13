@@ -1,0 +1,184 @@
+ion-menu-button {
+    color: var(--ion-color-primary);
+}
+
+ion-toolbar {
+    --background: #431d12;
+}
+
+ion-menu-button {
+    color: white !important;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    font-family: 'Futura';
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+ion-title {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cart {
+    color: white;
+}
+
+.back {
+    color: white;
+    font-size: 21px;
+}
+
+.searchtoolbar {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+ion-menu-button {
+    color: var(--ion-color-primary);
+}
+
+ion-toolbar {
+    --background: #431d12;
+}
+
+ion-menu-button {
+    color: white !important;
+}
+
+.ion-color-primary {
+    --ion-color-base: #431d12 !important;
+}
+
+ion-title {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cart {
+    color: white;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.centered {
+    position: absolute;
+    top: 33% !important;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: small;
+    top: 24%;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    text-align: center;
+    top: 24%;
+    font-size: small;
+    left: 16px;
+}
+
+.ion-text-end {
+    margin-right: 2px;
+    text-align: end !important;
+}
+
+.ion-text-start {
+    margin-left: 2px;
+    text-align: start !important;
+}
+
+.bottom-center {
+    position: absolute;
+    bottom: 8px;
+    top: 24%;
+    left: 32%;
+}
+
+.viewbtn {
+    border-top-right-radius: 14px;
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+    background: #8b8c8b;
+}
+
+.vertical {
+    border-left: 2px solid white;
+    height: 46px;
+    position: absolute;
+    left: 28%;
+    top: 24%;
+}
+
+.vertical2 {
+    border-left: 2px solid white;
+    height: 46px;
+    position: absolute;
+    left: 68%;
+    top: 24%;
+}
+
+.rating {
+    color: #ffffff;
+    margin-top: -11px;
+    font-size: 20px;
+}
+
+.cart {
+    color: white;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.addbtn {
+    // position: absolute;
+    // margin: 13px 56px;
+    border-top-left-radius: 14px;
+    color: white;
+    outline: none !important;
+    border: none !important;
+    padding: 5px;
+    font-size: 12px;
+    background: #431d12;
+}
+
+.timeslots {
+    color: black;
+    text-align: left;
+}

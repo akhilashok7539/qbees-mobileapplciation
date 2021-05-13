@@ -1,0 +1,7 @@
+{
+  "name": "qboy",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

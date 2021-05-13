@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="chevron-back-sharp" class="back" (click)="back()"></ion-icon>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon class="cart" name="cart-sharp"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title>QBEE</ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <h6>Add Delivery Address</h6>
+    <div class="container">
+
+        <ion-item>
+            <ion-label>Address Type</ion-label>
+            <ion-select [(ngModel)]="addresstype" placeholder="Select One">
+                <ion-select-option value="Home Address">Home Address</ion-select-option>
+                <ion-select-option value="Office Address">Office Address</ion-select-option>
+                <ion-select-option value="Others Address">Others Address</ion-select-option>
+
+            </ion-select>
+        </ion-item>
+
+        <!-- <ion-item transparent>
+
+            <ion-input placeholder="Name" type="text" [(ngModel)]="name">
+            </ion-input>
+        </ion-item>
+        <ion-item transparent>
+
+            <ion-input placeholder="Phone Number" type="Number" [(ngModel)]="contact">
+            </ion-input>
+        </ion-item> -->
+        <ion-item transparent>
+            <ion-textarea [(ngModel)]="address" placeholder="Address"></ion-textarea>
+
+        </ion-item>
+        <!-- <ion-item transparent>
+
+            <ion-input [(ngModel)]="pin" placeholder="Pincode" type="text">
+            </ion-input>
+        </ion-item> -->
+        <hr>
+
+        <button (click)="save()" class="ion-button-class">Save</button>
+    </div>
+
+</ion-content>

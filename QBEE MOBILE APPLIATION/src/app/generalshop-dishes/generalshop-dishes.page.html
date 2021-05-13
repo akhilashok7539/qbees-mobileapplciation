@@ -1,0 +1,379 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+
+            <ion-button routerLink="/cart">
+                <ion-icon class="cart" name="cart-sharp"></ion-icon>
+                <ion-badge color="warning" style="margin-top: -12px;
+              font-size: 10px;">{{cartlength}}</ion-badge>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title>QBEE</ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+<ion-content>
+    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="segment" color="primary">
+        <ion-segment-button value="0">
+            <ion-label>Menu</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="1">
+            <ion-label>Info</ion-label>
+        </ion-segment-button>
+
+    </ion-segment>
+
+
+    <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="true">
+        <ion-slide>
+            <div class="container">
+                <img src="./assets/images/food-banner3.jpg" alt="Snow" style="width:100%;         height: 193px; filter: brightness(0.5); ">
+
+                <div class="centered" style="top: 10% !important;">
+                    <p></p>
+
+                </div>
+
+
+                <!-- margin-top: 10px; -->
+                <!-- <div class="row" style="        position: absolute; top: 16%;"> -->
+
+
+                <!-- <div class="bottom-left">
+                      PAYMENT
+                      <br> COD
+                  </div>
+                  <div class="vertical"></div>
+                  <div class="bottom-center" style="font-size: small; left: 35%;   top: 24%;text-align: inherit;">
+                      DELIVERY TIME
+                      <br> {{shopdeliveryTime}} min
+                  </div>
+                  <div class="vertical2"></div>
+                  <div class="bottom-right">MIN ORDER
+                      <br> 0.0 INR
+                  </div> -->
+                <!-- <div class="col-sm-4">
+                      <p>PAYMENT</p>
+                  </div>
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-4"></div> -->
+
+                <!-- </div> -->
+                <div class="dix" style="    margin-top: -217px;
+              margin-bottom: 54px;">
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col size="12">
+                                <h5 style="font-family: 'Futura';font-weight: bold;
+                                letter-spacing: 4px;    margin-top: 29px;
+                                font-size: 25px;">{{shopName}}</h5>
+                                <p class="rating">★★★★★</p>
+                                <button *ngIf="shopStatus == 'Active'" class="btn btn-success" style="  font-family: 'Futura';     margin-bottom: -13px; padding: 4px;">
+                  Open</button>
+                                <button *ngIf="shopStatus != 'Active'" class="btn btn-danger" style="font-family: 'Futura';       margin-bottom: -13px;  padding: 4px;">
+                  closed</button>
+                            </ion-col>
+
+                        </ion-row>
+                    </ion-grid>
+                </div>
+                <!-- <div class="div" style="    margin-top: -58px;
+              margin-bottom: 21px;"> -->
+                <!-- <ion-grid>
+                      <ion-row>
+                          <ion-col size="4" style="border-right: 3px solid white !important; ">
+                              <div>
+
+                                  <p style="    font-size: 12px;">PAYMENT</p>
+                                  <p style="    font-size: 12px;">COD</p>
+                              </div>
+                          </ion-col>
+                          <ion-col size="4" style="border-right: 3px solid white !important; ">
+
+                              <div>
+                                  <p style="    font-size: 12px;">DELIVERY TIME</p>
+                                  <p style="    font-size: 12px;"> {{shopdeliveryTime}} min</p>
+                              </div>
+                          </ion-col>
+                          <ion-col size="4">
+
+                              <div>
+                                  <p style="    font-size: 12px;">MIN ORDER</p>
+                                  <p style="    font-size: 12px;"> ₹ 0.0</p>
+                              </div>
+                          </ion-col>
+                      </ion-row>
+                  </ion-grid> -->
+                <!-- </div> -->
+
+
+                <!-- <ion-row> -->
+
+                <ion-item style="margin-top: -21px;">
+                    <ion-col size="4">
+                        <ion-icon name="grid-outline" (click)="displaygrid()" *ngIf="shop_display_type == 'L'" style=" color: #0000005c;   font-size: 23px;">
+                        </ion-icon>
+
+                        <ion-icon name="list-outline" (click)="displaylist()" *ngIf="shop_display_type == 'B'" style="  color: #0000005c;  font-size: 23px;"></ion-icon>
+                    </ion-col>
+                    <!-- <ion-col size="4"></ion-col> -->
+                    <ion-col size="8">
+                        <ion-select placeholder="Menu" ionChange="subcategorychange($event)" style="float: right;">
+
+                            <ion-select-option value="">Choose a subcategory</ion-select-option>
+                            <ion-select-option *ngFor="let s of subcategory" value="{{s._id}}">Choose a subcategory
+                            </ion-select-option>
+
+
+                        </ion-select>
+                    </ion-col>
+
+                    <ion-label></ion-label>
+
+
+                </ion-item>
+                <!-- </ion-row> -->
+                <div class="div" *ngIf="shop_display_type == 'L'">
+
+                    <div class="card" style="margin: 6px;      padding: 7px 7px 0px 7px;" *ngFor="let products of products">
+                        <div class="row">
+                            <div class="col-sm-12" style="    margin-bottom: -11px;">
+                                <img src="{{products.item_img}}" alt="loading image" style="    width: 100px;margin-right: 10px;float: left;">
+                                <p style="color: black;
+                              text-align: left;
+                              font-size: 14px;
+                              ">{{products.item_name}}</p>
+
+                                <p style="color: #ff5e00;text-align: left;  margin-top: -17px;">★★★★★</p>
+
+                                <p style="    color: #020202;
+                              text-align: left;
+                              margin-top: -17px;
+                             ">
+                                    ₹ {{products.itm_srate}}</p>
+                                <p *ngIf="products.status == 'Active'" style="    width: 10px;
+                              background: #1e7e34;
+                              float: right;
+                              margin-top: -40px;
+                              border-radius: 41px;
+                              height: 10px;">.</p>
+                                <p *ngIf="products.status == 'Inactive'" style="    width: 10px;
+                               background: #fd0000;
+                               float: right;
+                               margin-top: -40px;
+                               border-radius: 41px;
+                               height: 10px;">.</p>
+
+                            </div>
+                            <ion-col size="3">
+                                <div class="ion-text-start" style="    margin-top: -10px;">
+                                    <button (click)="viewProduct(products)" class="viewbtn">View <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+
+                                </div>
+                            </ion-col>
+                            <ion-col size="6" style="    margin-top: -10px;">
+                                <p style="color: #000000bf;
+                              font-size: 14px;    margin-top: 5px;
+  margin-bottom: 0px;">Available @ 6:00 - 11:00</p>
+
+                            </ion-col>
+                            <ion-col size="3">
+
+                                <div class="ion-text-end" style="    margin-top: -10px;">
+                                    <button (click)="add(products)" class="addbtn">Add <ion-icon name="add-sharp">
+                    </ion-icon> </button>
+
+
+                                </div>
+                            </ion-col>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="div" *ngIf="shop_display_type == 'B'">
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col size="6" *ngFor="let products of products">
+
+                                <div class="card">
+                                    <img src="{{products.item_img}}" alt="loading image" style="    
+                                  width: 100px;
+                                  margin: 0 auto;">
+                                    <h4 style="font-size: 15px; margin-top: 8px; text-align: center; color: black;   padding-bottom: 0px;">
+                                        {{products.item_name}}</h4>
+                                    <!-- <p style="font-weight: bold;color: rgb(10, 150, 10); text-align: center;   margin-bottom: 0rem;">
+                                      Save 38.00</p> -->
+                                    <h6 style=" text-align: center; margin-top: -4px; color: black;   padding-bottom: 0px;font-size: 13px;">
+                                        RS.{{products.itm_srate}}.00/- &nbsp;
+                                        <S style="color: red;"></S>
+                                    </h6>
+                                    <ion-row>
+                                        <ion-col>
+                                            <button (click)="viewProduct(products)" class="viewbtn" style="width: 100%;">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </button>
+                                        </ion-col>
+                                        <ion-col><button class="viewbtn" (click)="add(products)" style="
+                                          width: 100%;
+                                          background: #1a2e69;
+                                          border: none;
+                                          border-top-right-radius: 0px;
+                                          height: 100%;
+                                          border-top-left-radius: 14px;
+                                      ">Add</button></ion-col>
+
+                                    </ion-row>
+
+                                    <!-- <ion-row>
+                                      <ion-col size="2"></ion-col>
+                                      <ion-col size="10" *ngIf="topDeals.deal_in_cart == 'Y'">
+                                          <button (click)="minus(topDeals)" class="buttonplusminus">
+                                              <ion-icon name="remove-sharp"></ion-icon>
+              
+                                          </button>
+              
+                                          <a class="quantity" style="    margin: 5px;color: black;">{{topDeals.deal_in_cartqty}}</a>
+                                          <button (click)="add(topDeals)" class="buttonplusminus">
+                                              <ion-icon name="add-sharp"></ion-icon>
+                                          </button>
+                                      </ion-col>
+                                      <ion-col size="1"></ion-col> -->
+
+                                    <!-- </ion-row> -->
+                                </div>
+
+                            </ion-col>
+
+                        </ion-row>
+                    </ion-grid>
+                </div>
+
+            </div>
+
+            <!-- <div class="card" style="margin: 6px;  padding: 7px;">
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <img src="./assets/images/food-banner1.jpg" style="    width: 100px;
+          margin-right: 10px;
+          height: 77px;
+          float: left;">
+                          <p style=" color: black; text-align: left; ">Product Name</p>
+
+                          <p style="    color: #ff5e00;text-align: left;  margin-top: -17px;">★★★★★</p>
+                          <p style="    color: #05740a;text-align: left;  margin-top: -17px;">110.0 INR</p>
+
+                      </div>
+                      <ion-col>
+                          <div class="ion-text-start">
+                              <button (click)="viewProduct()" class="viewbtn">View <ion-icon name="eye-outline"></ion-icon> </button>
+
+                          </div>
+                      </ion-col>
+                      <ion-col>
+
+                          <div class="ion-text-end">
+                              <button (click)="add()" class="addbtn">Add <ion-icon name="add-sharp"></ion-icon> </button>
+
+
+                          </div>
+                      </ion-col>
+
+                  </div>
+
+              </div> -->
+
+            <!-- </div> -->
+        </ion-slide>
+        <ion-slide>
+            <!-- <div class="card"> -->
+
+            <div class="container" style="margin: 10px;">
+                <!-- <div class="card"> -->
+                <ion-row>
+                    <ion-col size="8">
+                        <h6 style="color: black;text-align: left;font-weight: bold;font-family: 'Futura';">{{shopName}}</h6>
+                        <h6 style="color: black;text-align: left;font-family: 'Futura';">Pickup Charge {{shop_pickp_charge}}</h6>
+                        <h6 style="color: black;text-align: left;font-family: 'Futura';">Delivery Time {{shopdeliveryTime}}</h6>
+
+
+                        <p *ngIf="shop_rating == '1'" class="rating" style="text-align: left;color: rgb(247, 160, 0);    margin-top: 10px;">★</p>
+                        <p *ngIf="shop_rating == '2'" class="rating" style="text-align: left;color: rgb(247, 160, 0);    margin-top: 10px;">★★</p>
+                        <p *ngIf="shop_rating == '3'" class="rating" style="text-align: left;color: rgb(247, 160, 0);    margin-top: 10px;">★★★</p>
+                        <p *ngIf="shop_rating == '4'" class="rating" style="text-align: left;color: rgb(247, 160, 0);    margin-top: 10px;">★★★★</p>
+                        <p *ngIf="shop_rating == '5'" class="rating" style="text-align: left;color: rgb(247, 160, 0);    margin-top: 10px;">★★★★★</p>
+
+
+                        <!-- <h6 style="color: black;text-align: left;">Contact Number +91-XXX-XXX-XXXX</h6> -->
+                    </ion-col>
+                    <ion-col size="4">
+                        <img src="{{shop_image}}" alt="">
+                    </ion-col>
+                </ion-row>
+
+                <hr style="background: #d2d2d2;">
+                <h6 style="font-weight: bold;color: black;font-family: 'Futura';">Working Hours</h6>
+                <hr style="background: #d2d2d2; width: 60%;">
+
+                <p class="time" style="font-family: 'Futura';">Open Time : {{open_time}} AM</p>
+                <p class="time" style="font-family: 'Futura';">Close Time : {{close_time}} PM</p>
+
+                <!-- <p class="timeslots">
+
+                  Thursday 11am–4pm
+                  <br> Friday 11am–4pm
+                  <br> Saturday 11am–4pm
+                  <br> Sunday Closed
+                  <br> Monday 11am–4pm
+                  <br> Tuesday 11am–4pm
+                  <br> Wednesday 11am–4pm
+                  <br>
+
+              </p> -->
+                <!-- </div> -->
+            </div>
+            <!-- <ion-row>
+      <ion-col>
+        
+        <h6>Shop Name</h6>
+        <h6>Shop Address</h6>
+        <p class="rating" style="color: rgb(247, 160, 0);">★★★★★★</p>
+        <h6>Contact Number 9526266604</h6>
+        <hr style="background: #d2d2d2;">
+        <h6 style="font-weight: bold;">Working Hours</h6>
+        <p>
+
+          Thursday 11am–4pm
+          <br>
+          Friday 11am–4pm
+          <br>
+
+          Saturday 11am–4pm
+          <br>
+
+          Sunday Closed
+          <br>
+
+          Monday 11am–4pm
+          <br>
+
+          Tuesday 11am–4pm
+          <br>
+
+          Wednesday 11am–4pm
+          <br>
+
+        </p>
+      </ion-col>
+    </ion-row> -->
+        </ion-slide>
+
+    </ion-slides>
+</ion-content>

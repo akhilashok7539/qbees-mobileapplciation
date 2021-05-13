@@ -1,0 +1,129 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button routerLink="/cart">
+                <ion-icon class="cart" name="cart-sharp"></ion-icon>
+                <ion-badge color="warning" style="margin-top: -12px;
+                font-size: 10px;">{{cartlength}}</ion-badge>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title>QBEE</ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+<ion-content *ngIf="msg == 'DATA FOUND'">
+
+
+    <div class="container">
+        <img src="./assets/images/background.jpg" alt="Snow" style="width:100%;    filter: brightness(0.5);  margin-bottom: 14px;
+      height: 133px;">
+
+        <div class="centered">
+            <h5>{{sName}}</h5>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- 
+    <div class="card" *ngFor="let s of shops" (click)="view()">
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="./assets/images/food-banner4.jpg" class="productimage">
+                <p style="margin-left: 117px;
+        margin-top: -4pc;">{{s.shop_name}}</p>
+                <p style="margin-left: 117px;
+        margin-top: -17px;
+        font-size: 11px;
+        color: grey;">Arabian</p>
+
+                <p style="color: #ff5e00;
+          margin-left: 117px;margin-top: -17px;">★★★★★★ <em style="font-size: 10px;  float: right;  color: black;">30 mins</em> </p>
+                <p style="color: #000000;font-size: 11px;
+          text-align: center;
+    margin-top: -10px;">Open Time :9.30 am , Close Time:10 pm</p>
+
+            </div>
+
+        </div>
+        <ion-col style="  margin-top: -20px;">
+            <div class="ion-text-start">
+                <img src="./assets/images/nonveg.png" alt="" style="    width: 16px;
+     ">
+                <img src="./assets/images/veg.png" alt="" style="margin-left: 5px;    width: 16px;
+        ">
+            </div>
+        </ion-col>
+        <ion-col>
+            <div class="ion-text-end">
+                <p *ngIf="s.sStatus == 'opend'" style="margin-top: -83px;
+        font-size: 10px;
+        float: right;
+        color: green;">Open
+                </p>
+                <p *ngIf="s.sStatus == 'closed'" style=" margin-top: -83px;
+          font-size: 10px;
+          float: right;
+          color: rgb(255, 0, 43);">Closed</p>
+            </div>
+        </ion-col>
+
+    </div> -->
+
+    <ion-row *ngFor="let s of shops" (click)="view(s)">
+
+        <ion-col size="3">
+            <img src="{{s.shop_img}}" class="productimage" style="     width: 100px;
+            margin-right: 10px;
+            height: 90px;
+            float: left;">
+            <!-- <div class="ion-text-start">
+                <img src="./assets/images/nonveg.png" alt="" style="    width: 16px;">
+                <img src="./assets/images/veg.png" alt="" style="margin-left: 5px;    width: 16px; ">
+            </div> -->
+        </ion-col>
+        <ion-col size="9">
+
+            <p style="    margin-bottom: 4px !important;
+        margin-top: 5px;    font-size: 13px;
+    ">{{s.shop_name | slice:0:30}}</p>
+            <p style="margin-bottom: 0px !important;color: grey;    font-size: 9px;">{{s.shop_type1}} ,
+                <em *ngIf="s.shop_state == 'Active'" style="margin-top: -83px;
+          font-size: 10px;
+          
+          color: green;">Open</em> <em style=" margin-top: -83px;
+          font-size: 10px;
+        
+          color: rgb(255, 0, 43);" *ngIf="s.shop_state != 'Active'">Closed</em> </p>
+            <!-- | date:'h:mm' -->
+            <p style="color: #ff5e00; margin-bottom: 4px !important;
+        margin-top: 5px;">★★★★★ <em style="color: #000000;font-size:10px">
+        
+      {{s.deliveryTime}}</em></p>
+            <p style="color: #000000;font-size: 11px;    margin-bottom: 1px; ">Open :{{s.open_time}} am , Close :{{s.clos_time}} pm
+                <img src="./assets/images/nonveg.png" alt="" style="    width: 16px;">
+                <img src="./assets/images/veg.png" alt="" style="margin-left: 5px;    width: 16px; "></p>
+
+        </ion-col>
+        <!-- <ion-col  style="  margin-top: -20px;">
+           
+        </ion-col> -->
+        <hr>
+    </ion-row>
+</ion-content>
+
+<ion-content *ngIf="msg == 'NO DATA FOUND'">
+    <div class="contianer" style="   margin-top: 22%;">
+        <img src="./assets/images/nofood.png" alt="" style="    margin: 0 auto;
+        display: block;">
+        <p style="text-align: center;font-weight: bold;margin-top: 10px;">No Shops Found</p>
+    </div>
+</ion-content>

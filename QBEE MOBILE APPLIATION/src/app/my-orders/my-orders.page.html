@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="chevron-back-sharp" class="back" (click)="back()"></ion-icon>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <!-- <ion-button>
+                <ion-icon class="cart" name="cart-sharp"></ion-icon>
+            </ion-button> -->
+        </ion-buttons>
+
+        <ion-title>QBEE</ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+<ion-content>
+
+    <div class="card" *ngFor="let orderlist of orderlist">
+        <h6 style="    text-align: center;
+        font-weight: bold;
+        color: #431d12;">{{orderlist.order_id}}</h6>
+        <hr style="    border-top: 1px solid #bfb9b9;">
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start">
+                    <p>Product </p>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-center">
+                    <p>Price,quantity</p>
+                </div>
+
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-end">
+                    <p>Status</p>
+                </div>
+
+            </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let order of orderlist.products">
+            <ion-col>
+                <div class="ion-text-start">
+                    <p>{{order.name}}</p>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-center">
+                    <!-- <p>Price,quantity</p> -->
+                    <p>{{order.price}},{{order.qnty}}</p>
+
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-end">
+                    <!-- <p>Status</p> -->
+                    <p style="color: green;">{{orderlist.order_status}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <hr style="background: #e8dede;">
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start">
+                    <p>Total Amount</p>
+
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-end">
+                    <p style="font-weight: bold; color: red;">{{orderlist.amount}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+    </div>
+
+
+
+
+</ion-content>

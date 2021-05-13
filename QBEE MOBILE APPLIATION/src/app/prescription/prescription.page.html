@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+        </ion-buttons>
+        <ion-buttons slot="end">
+
+        </ion-buttons>
+
+        <ion-title>QBEE</ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let p of prescriptions">
+        <ion-row>
+            <ion-col size="6">
+                <img src="https://dashboard.qbees.in/prescription/get/image/{{p.presc_img}}" alt="" style="    height: 239px;">
+
+            </ion-col>
+            <ion-col size="6">
+                <p>Pharmacy Name : {{p.pharmacy_id.pharmacy_name}}</p>
+                <p>Description :{{p.description}}</p>
+                <p>Note : {{p.nots}}</p>
+                <p>Status: {{p.shop_state}}</p>
+                <p>Contact : {{p.contact}}</p>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+</ion-content>

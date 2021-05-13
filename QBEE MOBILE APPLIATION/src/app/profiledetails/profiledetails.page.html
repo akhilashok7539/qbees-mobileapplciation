@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <!-- <ion-buttons slot="start" routerLink="/folder/Inbox">
+            <ion-icon name="chevron-back-sharp" class="back"></ion-icon>
+        </ion-buttons> -->
+
+
+        <ion-title>QBEE</ion-title>
+        <ion-buttons slot="end">
+            <!-- <ion-icon class="cart" name="cart-sharp"></ion-icon>
+            <ion-badge color="warning" style="margin-top: -12px;
+            font-size: 10px;">{{cartlength}}</ion-badge> -->
+        </ion-buttons>
+    </ion-toolbar>
+
+
+</ion-header>
+<ion-content>
+    <div class="center">
+        <div heading-column-ln>
+            <h1 big-heading> PROFILE</h1>
+
+
+        </div>
+        <ion-label>
+            Update your Profile!
+        </ion-label>
+        <ion-item transparent>
+            <ion-icon name="person-circle-outline"></ion-icon>
+            <ion-input placeholder="Name" type="text" [(ngModel)]="name">
+            </ion-input>
+        </ion-item>
+        <ion-item transparent>
+            <ion-icon name="lock-closed"></ion-icon>
+            <ion-input placeholder="User Name" type="text" [(ngModel)]="userName">
+            </ion-input>
+        </ion-item>
+        <ion-item transparent>
+            <ion-icon name="location-outline"></ion-icon>
+            <ion-input placeholder="Address" type="text" [(ngModel)]="address">
+            </ion-input>
+        </ion-item>
+        <ion-item transparent>
+            <ion-icon name="map-outline"></ion-icon>
+            <ion-label>Locality</ion-label>
+            <ion-select [(ngModel)]="location" (ionChange)="onChange($event)">
+                <ion-select-option *ngFor="let results of results" value="{{results._id}}">{{results.location}}</ion-select-option>
+            </ion-select>
+
+        </ion-item>
+        <ion-item transparent>
+            <ion-icon name="map-outline"></ion-icon>
+            <ion-label>Area</ion-label>
+            <ion-select [(ngModel)]="slocation">
+                <ion-select-option *ngFor="let results of sublocations" value="{{results._id}}">{{results.sublocation}}</ion-select-option>
+            </ion-select>
+
+        </ion-item>
+        <div linespace></div>
+        <ion-button (click)="save()" class="ion-button-class" shape="round" fill="solid" size="large" expand="block">
+            Update Profile</ion-button>
+    </div>
+</ion-content>

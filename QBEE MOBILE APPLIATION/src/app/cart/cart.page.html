@@ -1,0 +1,252 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="chevron-back-sharp" class="back" routerLink="/folder/Inbox"></ion-icon>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button routerLink="/cart">
+                <ion-icon class="cart" name="cart-sharp"></ion-icon>
+                <ion-badge color="warning" style="margin-top: -12px;
+                font-size: 10px;">{{cartlength}}</ion-badge>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title>QBEE</ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content *ngIf="msg == 'DATA FOUND'">
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start">
+                    <h3>Basket <em style="font-weight: normal;font-style: normal;font-family: 'Futura';">({{cartlength}} items)</em> </h3>
+
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="ion-text-end" style="font-family: 'Futura';">
+                    <h3>₹ {{totalS}}</h3>
+
+                </div>
+            </ion-col>
+            <!-- <ion-col>
+        <div class="ion-text-center">
+          <h3>text-center</h3>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
+        </div>
+      </ion-col> -->
+        </ion-row>
+
+    </ion-grid>
+    <!-- 
+    <div class="card" style="margin: 6px;   height: 137px;
+  padding: 7px;" (click)="viewProduct()" *ngFor="let cartlist of cartlist">
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="{{cartlist.item_image}}" style="    width: 100px; height: 77px; float: left;">
+                <p style=" color: black; text-align: left; ">{{cartlist.item_name}}</p>
+
+
+                <p style="    color: #0e0f0f;text-align: left;  margin-top: -17px;">{{cartlist.price}}</p>
+                <button style="float: right;" (click)="add()" class="addbtn">
+          <ion-icon name="add-sharp"></ion-icon>
+        </button>
+
+                <a class="quantity" style="float: right;">1</a>
+                <button style="float: right;" (click)="add()" class="addbtn">
+          <ion-icon name="remove-sharp"></ion-icon>
+        </button>
+
+            </div>
+
+        </div>
+    </div> -->
+    <ion-row class="ionrow" *ngFor="let cartlist of cartlist">
+        <ion-col size="2">
+            <img src="{{cartlist.item_img}}" style="    width: 100%;    ">
+
+        </ion-col>
+        <ion-col size="10">
+            <p style=" color: black;font-size: 15px;">{{cartlist.item_name}}</p>
+            <p style="    color: #0e0f0f;    margin-top: -12px; font-size: 14px;   margin-bottom: -6px;">{{cartlist.price}} x {{cartlist.qty}} = {{cartlist.price * cartlist.qty}}</p>
+
+
+        </ion-col>
+        <ion-col size="4">
+            <button (click)="remove(cartlist)" class="btn btn-danger" style="border: none;
+            background: #431d12;
+            padding: 4px;    width: 44%;
+            margin-top: 7px;">
+        <ion-icon name="trash"></ion-icon>    
+        </button>
+
+
+
+        </ion-col>
+        <ion-col size="8">
+            <button style="float: right;" (click)="add(cartlist)" class="addbtn">
+                <ion-icon name="add-sharp"></ion-icon>
+              </button>
+
+            <a class="quantity" style="float: right;">{{cartlist.qty}}</a>
+            <button style="float: right;" (click)="minus(cartlist)" class="addbtn">
+                <ion-icon name="remove-sharp"></ion-icon>
+              </button>
+        </ion-col>
+
+    </ion-row>
+
+    <!-- <div class="card"> -->
+    <!-- <hr> -->
+    <div class="card">
+        <!-- <input type="checkbox" name="" id="" (change)="changecheckbox($event)"> -->
+
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start" style="    font-family: 'Futura';">
+                    <ion-checkbox color="primary" [(ngModel)]="rmchecked" (ionChange)="LoginRemCheck(rmchecked)"></ion-checkbox>
+
+                    Redeem your {{points}} Points
+                </div>
+            </ion-col>
+
+
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start" style="    font-family: 'Futura';">
+                    Total Amount
+
+                </div>
+            </ion-col>
+
+            <ion-col>
+                <div class="ion-text-end" style="    font-family: 'Futura';">
+                    ₹ {{totalS}}.0
+
+                </div>
+            </ion-col>
+
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start" style="    font-family: 'Futura';">
+                    Redeem Point
+
+                </div>
+            </ion-col>
+
+            <ion-col>
+                <div class="ion-text-end" style="    font-family: 'Futura';">
+                    -₹{{yoursave}}
+
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start" style="    font-family: 'Futura';">
+                    Delivery Charge
+
+                </div>
+            </ion-col>
+
+            <ion-col>
+                <div class="ion-text-end" style="    font-family: 'Futura';">
+                    ₹ 30.0
+
+                </div>
+            </ion-col>
+
+        </ion-row>
+        <!-- <ion-row>
+            <ion-col>
+                <div class="ion-text-start">
+                    <h3>Payable Amount </h3>
+
+                </div>
+            </ion-col>
+
+            <ion-col>
+                <div class="ion-text-end">
+                    <h3>₹ {{totalS}}.0</h3>
+
+                </div>
+            </ion-col>
+
+        </ion-row> -->
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start" style="    font-family: 'Futura';">
+                    Your Save
+
+                </div>
+            </ion-col>
+
+            <ion-col>
+                <div class="ion-text-end" style="    font-family: 'Futura';">
+                    ₹ {{yoursave}}.0
+
+                </div>
+            </ion-col>
+
+        </ion-row>
+        <hr>
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start" style="    font-family: 'Futura';">
+                    <h3>Payable Amount </h3>
+
+                </div>
+            </ion-col>
+
+            <ion-col>
+                <div class="ion-text-end" style="    font-family: 'Futura';">
+                    <h3>₹ {{totalS +30}}.0</h3>
+
+                </div>
+            </ion-col>
+
+        </ion-row>
+        <!-- </div> -->
+    </div>
+
+
+
+</ion-content>
+<ion-content *ngIf="msg == 'NO DATA FOUND'">
+
+    <div class="contianer">
+        <img src="./assets/images/cart.png" alt="" style="margin-top: 38px;">
+        <p style="text-align: center;font-weight: bold;margin-top: 10px;    font-family: 'Futura';">No Items Found In cart</p>
+    </div>
+</ion-content>
+
+<ion-footer *ngIf="msg == 'DATA FOUND'">
+    <ion-toolbar class="toolbar">
+        <ion-buttons slot="start">
+
+            <!-- <p>Payable amount</p> -->
+            <h3 style="margin-left: 10px;"></h3>
+            <ion-col>
+                <div class="ion-text-start">
+                    <!-- <h3 style="font-size: 13px;font-weight: normal;color: rgb(167, 166, 166);">Payable Amount</h3>
+                    <p>₹ {{totalS +30}} </p> -->
+                    <button class="btn btn-danger" (click)="preorder()" style="background: #431d12; ">Pre-Order</button>
+
+                </div>
+            </ion-col>
+        </ion-buttons>
+        <ion-buttons slot="end">
+
+
+            <button class="btn btn-primary" (click)="bookorder()" style="background: white;
+            color: black;
+            border: 2px solid #431d12;">Place Order</button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>

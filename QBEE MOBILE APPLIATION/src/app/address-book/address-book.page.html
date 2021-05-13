@@ -1,0 +1,93 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="chevron-back-sharp" class="back" (click)="back()"></ion-icon>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <!-- <ion-button>
+                <ion-icon class="cart" name="cart-sharp"></ion-icon>
+            </ion-button> -->
+        </ion-buttons>
+
+        <ion-title>QBEE</ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+    <!-- <ion-row>
+    <ion-col>
+      <div class="ion-text-end">
+        <ion-button color="secondary" (click)="add()">+</ion-button>
+      </div>
+    </ion-col>
+  </ion-row> -->
+    <div class="card" *ngFor="let address of address">
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start">
+                    <ion-badge color="success" class="badge" *ngIf="address.add_type =='Home Address'">Home</ion-badge>
+                    <ion-badge color="danger" class="badge" *ngIf="address.add_type =='Office Address'">Office</ion-badge>
+                    <ion-badge color="warning" class="badge" *ngIf="address.add_type =='Others Address'">Others</ion-badge>
+
+                    <!-- <ion-badge *ngIf="address.status =='notselected'" color="danger" class="badge">others</ion-badge> -->
+
+                    <p>
+                        <ion-icon name="location-outline"></ion-icon> {{address.address}}
+                    </p>
+
+                </div>
+            </ion-col>
+            <!-- <ion-col>
+        <div class="ion-text-center">
+          <p>Price,quantity</p>
+          <p>100,2</p>
+
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="ion-text-end">
+          <p>Status</p>
+          <p style="color: green;">Completed</p>
+        </div>
+      </ion-col> -->
+        </ion-row>
+    </div>
+    <!-- <div class="card" *ngIf="officeaddrss != ''">
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start">
+                    <ion-badge color="danger" class="badge">Office</ion-badge>
+
+                    <p>
+                        <ion-icon name="location-outline"></ion-icon> {{officeaddrss}}
+                    </p>
+
+                </div>
+            </ion-col>
+        </ion-row>
+    </div>
+    <div class="card" *ngIf="other_address != ''">
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-start">
+                    <ion-badge color="warning" class="badge">Others</ion-badge>
+
+                    <p>
+                        <ion-icon name="location-outline"></ion-icon> {{other_address}}
+                    </p>
+
+                </div>
+            </ion-col>
+        </ion-row>
+    </div> -->
+    <ion-fab vertical="bottom" horizontal="end" edge slot="fixed">
+        <ion-fab-button (click)="add()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>

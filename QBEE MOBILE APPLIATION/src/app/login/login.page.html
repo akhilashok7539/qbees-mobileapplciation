@@ -1,0 +1,50 @@
+<!-- <ion-content padding class="background"> -->
+<!-- <div style="background: url('./assets/images/register.jpg');">
+
+  </div> -->
+<!-- <p routerLink="/folder/Inbox">Guest Login?</p>  -->
+
+<!-- <div class="row">
+        <div class="container">
+            <input type="number" [(ngModel)]="mobnumber" class="form-control" placeholder="Phone Number">
+            <button class="btn btn-danger" (click)="sendOtp()">Send OTP</button>
+
+        </div>
+    </div> -->
+
+
+<ion-content padding>
+
+
+    <ion-row class="rowclass">
+        <ion-col>
+            <img src="./assets/images/qbee 3D logo png.png" alt="">
+            <!-- <h1 class="heading">QBEES</h1> -->
+            <p>Online Delivery & Services </p>
+        </ion-col>
+    </ion-row>
+
+    <div class="center">
+        <div heading-column-ln>
+            <h1 big-heading> Login!</h1>
+
+
+        </div>
+        <ion-label>
+            Welcome to Qbee!
+        </ion-label>
+        <div linespace></div>
+
+        <ion-item transparent>
+            <ion-icon name="call"></ion-icon>
+            &nbsp;
+            <ion-input placeholder="Mobile Number" type="number" [(ngModel)]="mobnumber">
+            </ion-input>
+        </ion-item>
+        <div linespace></div>
+        <!-- <ion-button (click)="sendOtp()" class="ion-button-class" shape="round" fill="solid" size="large" expand="block">
+            Send OTP</ion-button> -->
+        <button (click)="sendOtp()" class="ion-button-class">Send OTP</button>
+        <!-- <p style="color: black;margin-top: 20px;">Login in as Guest?</p> -->
+    </div>
+</ion-content>

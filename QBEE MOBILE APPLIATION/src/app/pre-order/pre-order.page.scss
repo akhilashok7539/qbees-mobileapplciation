@@ -1,0 +1,96 @@
+ion-menu-button {
+    color: var(--ion-color-primary);
+}
+
+ion-toolbar {
+    --background: #431d12;
+}
+
+ion-menu-button {
+    color: white !important;
+}
+
+ion-title {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cart {
+    color: white;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.centered {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+hr {
+    border-top: 1px solid rgb(214, 210, 210);
+    width: 93%;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.addbtn {
+    // background: #431d12;
+    background: #b9b6b6;
+    padding: 10px;
+    float: right;
+    color: white;
+    // border-radius: 100%;
+}
+
+.btn-danger {
+    width: 100%;
+    border: none;
+    background: #431d12;
+    margin-top: 4px;
+}
+
+button {
+    outline: none !important;
+}
+
+.back {
+    color: white;
+    font-size: 23px;
+    outline: none !important;
+}
+
+.quantity {
+    padding: 10px;
+    color: black;
+}
+
+.toolbar {
+    --background: white;
+}
+
+.save {
+    font-weight: bold;
+    color: green;
+}
+
+.card {
+    padding: 10px;
+}
+
+.ionrow {
+    border: 1px solid #dad8d8 !important;
+    margin: 5px !important;
+}

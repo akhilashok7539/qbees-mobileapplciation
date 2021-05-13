@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+        </ion-buttons>
+        <ion-buttons slot="end">
+
+        </ion-buttons>
+
+        <ion-title>QBEE</ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+
+
+
+
+
+    <ion-row *ngFor="let s of shops" (click)="view(s)">
+
+        <ion-col size="3">
+            <img src="https://dashboard.qbees.in/medicalshop/get/image/{{s.shop_img}}" class="productimage" style="     width: 100px;
+          margin-right: 10px;
+          height: 90px;
+          float: left;">
+
+        </ion-col>
+        <ion-col size="9">
+
+            <p style="    margin-bottom: 4px !important;
+      margin-top: 5px;    font-size: 13px;
+  ">{{s.pharmacy_name | slice:0:30}}</p>
+            <p style="margin-bottom: 0px !important;color: grey;    font-size: 9px;">
+                <em *ngIf="s.shop_state == 'Active'" style="margin-top: -83px;
+        font-size: 10px;
+        
+        color: green;">Open</em> <em style=" margin-top: -83px;
+        font-size: 10px;
+      
+        color: rgb(255, 0, 43);" *ngIf="s.shop_state != 'Active'">Closed</em> </p>
+            <p style="    margin-bottom: 4px !important;
+            margin-top: 5px;
+            font-size: 13px;">Landline :{{s.landline}}</p>
+            <!-- <p style="color: #ff5e00; margin-bottom: 4px !important;
+      margin-top: 5px;">★★★★★ <em style="color: #000000;font-size:10px">
+      
+    {{s.deliveryTime}}</em></p> -->
+            <p style="color: #000000;font-size: 11px;    margin-bottom: 1px; ">Opens :{{s.open_time}} am , Closes :{{s.clos_time}} pm
+            </p>
+
+        </ion-col>
+
+        <hr>
+    </ion-row>
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="chevron-back-sharp" class="back" routerLink="/folder/Inbox"></ion-icon>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <!-- <ion-button routerLink="/cart">
+                <ion-icon class="cart" name="cart-sharp"></ion-icon>
+                <ion-badge color="warning" style="margin-top: -12px;
+              font-size: 10px;">{{cartlength}}</ion-badge>
+            </ion-button> -->
+        </ion-buttons>
+
+        <ion-title>QBEE</ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+
+    <ion-item>
+        <ion-label>Choose Date</ion-label>
+        <ion-datetime displayFormat="MM DD YYYY" value="1994-12-15" placeholder="Select Date" [min]="year" [(ngModel)]="date"></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-label>Choose Time</ion-label>
+        <ion-datetime displayFormat="HH:mm" placeholder="Select Time" [(ngModel)]="time"></ion-datetime>
+    </ion-item>
+    <button class="btn btn-danger" (click)="preorder()">Pre-Order</button>
+
+</ion-content>
